@@ -1,0 +1,602 @@
+[
+    {
+        "matchID": 1001,
+        "teamA": "Spartans",
+        "teamB": "Titans",
+        "startTime": "2025-07-05T09:00:00Z"
+    },
+    {
+        "matchID": 1002,
+        "teamA": "Thunder",
+        "teamB": "Titans",
+        "startTime": "2025-07-05T12:00:00Z"
+    },
+    {
+        "matchID": 1003,
+        "teamA": "Falcons",
+        "teamB": "Giants",
+        "startTime": "2025-07-06T15:00:00Z"
+    },
+    {
+        "matchID": 1004,
+        "teamA": "Spartans",
+        "teamB": "Raptors",
+        "startTime": "2025-07-07T18:00:00Z"
+    },
+    {
+        "matchID": 1005,
+        "teamA": "Eagles",
+        "teamB": "Dragons",
+        "startTime": "2025-07-08T21:00:00Z"
+    },
+    {
+        "matchID": 1006,
+        "teamA": "Giants",
+        "teamB": "Comets",
+        "startTime": "2025-07-09T12:00:00Z"
+    },
+    {
+        "matchID": 1007,
+        "teamA": "Bears",
+        "teamB": "Wolves",
+        "startTime": "2025-07-10T15:00:00Z"
+    },
+    {
+        "matchID": 1008,
+        "teamA": "Pirates",
+        "teamB": "Hawks",
+        "startTime": "2025-07-11T18:00:00Z"
+    },
+    {
+        "matchID": 1009,
+        "teamA": "Knights",
+        "teamB": "Hornets",
+        "startTime": "2025-07-12T21:00:00Z"
+    },
+    {
+        "matchID": 1010,
+        "teamA": "Falcons",
+        "teamB": "Kings",
+        "startTime": "2025-07-13T12:00:00Z"
+    },
+    {
+        "matchID": 1011,
+        "teamA": "Vikings",
+        "teamB": "Knights",
+        "startTime": "2025-07-14T15:00:00Z"
+    },
+    {
+        "matchID": 1012,
+        "teamA": "Dragons",
+        "teamB": "Eagles",
+        "startTime": "2025-07-15T18:00:00Z"
+    },
+    {
+        "matchID": 1013,
+        "teamA": "Dragons",
+        "teamB": "Panthers",
+        "startTime": "2025-07-16T21:00:00Z"
+    },
+    {
+        "matchID": 1014,
+        "teamA": "Lions",
+        "teamB": "Eagles",
+        "startTime": "2025-07-17T12:00:00Z"
+    },
+    {
+        "matchID": 1015,
+        "teamA": "Kings",
+        "teamB": "Tigers",
+        "startTime": "2025-07-18T15:00:00Z"
+    },
+    {
+        "matchID": 1016,
+        "teamA": "Warriors",
+        "teamB": "Mustangs",
+        "startTime": "2025-07-19T18:00:00Z"
+    },
+    {
+        "matchID": 1017,
+        "teamA": "Cobras",
+        "teamB": "Spartans",
+        "startTime": "2025-07-20T21:00:00Z"
+    },
+    {
+        "matchID": 1018,
+        "teamA": "Falcons",
+        "teamB": "Leopards",
+        "startTime": "2025-07-21T12:00:00Z"
+    },
+    {
+        "matchID": 1019,
+        "teamA": "Spartans",
+        "teamB": "Giants",
+        "startTime": "2025-07-22T15:00:00Z"
+    },
+    {
+        "matchID": 1020,
+        "teamA": "Bulls",
+        "teamB": "Eagles",
+        "startTime": "2025-07-23T18:00:00Z"
+    },
+    {
+        "matchID": 1021,
+        "teamA": "Dragons",
+        "teamB": "Raptors",
+        "startTime": "2025-07-24T21:00:00Z"
+    },
+    {
+        "matchID": 1022,
+        "teamA": "Leopards",
+        "teamB": "Comets",
+        "startTime": "2025-07-25T12:00:00Z"
+    },
+    {
+        "matchID": 1023,
+        "teamA": "Bulls",
+        "teamB": "Cobras",
+        "startTime": "2025-07-26T15:00:00Z"
+    },
+    {
+        "matchID": 1024,
+        "teamA": "Thunder",
+        "teamB": "Kings",
+        "startTime": "2025-07-27T18:00:00Z"
+    },
+    {
+        "matchID": 1025,
+        "teamA": "Kings",
+        "teamB": "Spartans",
+        "startTime": "2025-07-28T21:00:00Z"
+    },
+    {
+        "matchID": 1026,
+        "teamA": "Giants",
+        "teamB": "Warriors",
+        "startTime": "2025-07-29T12:00:00Z"
+    },
+    {
+        "matchID": 1027,
+        "teamA": "Eagles",
+        "teamB": "Falcons",
+        "startTime": "2025-07-30T15:00:00Z"
+    },
+    {
+        "matchID": 1028,
+        "teamA": "Falcons",
+        "teamB": "Bears",
+        "startTime": "2025-07-31T18:00:00Z"
+    },
+    {
+        "matchID": 1029,
+        "teamA": "Titans",
+        "teamB": "Mustangs",
+        "startTime": "2025-07-05T21:00:00Z"
+    },
+    {
+        "matchID": 1030,
+        "teamA": "Panthers",
+        "teamB": "Thunder",
+        "startTime": "2025-07-06T12:00:00Z"
+    },
+    {
+        "matchID": 1031,
+        "teamA": "Vikings",
+        "teamB": "Knights",
+        "startTime": "2025-07-07T15:00:00Z"
+    },
+    {
+        "matchID": 1032,
+        "teamA": "Phoenix",
+        "teamB": "Comets",
+        "startTime": "2025-07-08T18:00:00Z"
+    },
+    {
+        "matchID": 1033,
+        "teamA": "Tigers",
+        "teamB": "Raptors",
+        "startTime": "2025-07-09T21:00:00Z"
+    },
+    {
+        "matchID": 1034,
+        "teamA": "Mustangs",
+        "teamB": "Dragons",
+        "startTime": "2025-07-10T12:00:00Z"
+    },
+    {
+        "matchID": 1035,
+        "teamA": "Eagles",
+        "teamB": "Raptors",
+        "startTime": "2025-07-11T15:00:00Z"
+    },
+    {
+        "matchID": 1036,
+        "teamA": "Falcons",
+        "teamB": "Rockets",
+        "startTime": "2025-07-12T18:00:00Z"
+    },
+    {
+        "matchID": 1037,
+        "teamA": "Titans",
+        "teamB": "Tigers",
+        "startTime": "2025-07-13T21:00:00Z"
+    },
+    {
+        "matchID": 1038,
+        "teamA": "Wizards",
+        "teamB": "Panthers",
+        "startTime": "2025-07-14T12:00:00Z"
+    },
+    {
+        "matchID": 1039,
+        "teamA": "Panthers",
+        "teamB": "Eagles",
+        "startTime": "2025-07-15T15:00:00Z"
+    },
+    {
+        "matchID": 1040,
+        "teamA": "Warriors",
+        "teamB": "Falcons",
+        "startTime": "2025-07-16T18:00:00Z"
+    },
+    {
+        "matchID": 1041,
+        "teamA": "Tigers",
+        "teamB": "Falcons",
+        "startTime": "2025-07-17T21:00:00Z"
+    },
+    {
+        "matchID": 1042,
+        "teamA": "Bulls",
+        "teamB": "Bears",
+        "startTime": "2025-07-18T12:00:00Z"
+    },
+    {
+        "matchID": 1043,
+        "teamA": "Warriors",
+        "teamB": "Kings",
+        "startTime": "2025-07-19T15:00:00Z"
+    },
+    {
+        "matchID": 1044,
+        "teamA": "Cobras",
+        "teamB": "Giants",
+        "startTime": "2025-07-20T18:00:00Z"
+    },
+    {
+        "matchID": 1045,
+        "teamA": "Comets",
+        "teamB": "Tigers",
+        "startTime": "2025-07-21T21:00:00Z"
+    },
+    {
+        "matchID": 1046,
+        "teamA": "Hornets",
+        "teamB": "Eagles",
+        "startTime": "2025-07-22T12:00:00Z"
+    },
+    {
+        "matchID": 1047,
+        "teamA": "Storm",
+        "teamB": "Leopards",
+        "startTime": "2025-07-23T15:00:00Z"
+    },
+    {
+        "matchID": 1048,
+        "teamA": "Spartans",
+        "teamB": "Cobras",
+        "startTime": "2025-07-24T18:00:00Z"
+    },
+    {
+        "matchID": 1049,
+        "teamA": "Storm",
+        "teamB": "Eagles",
+        "startTime": "2025-07-25T21:00:00Z"
+    },
+    {
+        "matchID": 1050,
+        "teamA": "Comets",
+        "teamB": "Knights",
+        "startTime": "2025-07-26T12:00:00Z"
+    },
+    {
+        "matchID": 1051,
+        "teamA": "Mustangs",
+        "teamB": "Giants",
+        "startTime": "2025-07-27T15:00:00Z"
+    },
+    {
+        "matchID": 1052,
+        "teamA": "Titans",
+        "teamB": "Lions",
+        "startTime": "2025-07-28T18:00:00Z"
+    },
+    {
+        "matchID": 1053,
+        "teamA": "Warriors",
+        "teamB": "Titans",
+        "startTime": "2025-07-29T21:00:00Z"
+    },
+    {
+        "matchID": 1054,
+        "teamA": "Knights",
+        "teamB": "Giants",
+        "startTime": "2025-07-30T12:00:00Z"
+    },
+    {
+        "matchID": 1055,
+        "teamA": "Tigers",
+        "teamB": "Titans",
+        "startTime": "2025-07-31T15:00:00Z"
+    },
+    {
+        "matchID": 1056,
+        "teamA": "Panthers",
+        "teamB": "Eagles",
+        "startTime": "2025-07-05T18:00:00Z"
+    },
+    {
+        "matchID": 1057,
+        "teamA": "Raptors",
+        "teamB": "Knights",
+        "startTime": "2025-07-06T21:00:00Z"
+    },
+    {
+        "matchID": 1058,
+        "teamA": "Titans",
+        "teamB": "Raptors",
+        "startTime": "2025-07-07T12:00:00Z"
+    },
+    {
+        "matchID": 1059,
+        "teamA": "Bears",
+        "teamB": "Leopards",
+        "startTime": "2025-07-08T15:00:00Z"
+    },
+    {
+        "matchID": 1060,
+        "teamA": "Knights",
+        "teamB": "Eagles",
+        "startTime": "2025-07-09T18:00:00Z"
+    },
+    {
+        "matchID": 1061,
+        "teamA": "Leopards",
+        "teamB": "Comets",
+        "startTime": "2025-07-10T21:00:00Z"
+    },
+    {
+        "matchID": 1062,
+        "teamA": "Spartans",
+        "teamB": "Hornets",
+        "startTime": "2025-07-11T12:00:00Z"
+    },
+    {
+        "matchID": 1063,
+        "teamA": "Bears",
+        "teamB": "Phoenix",
+        "startTime": "2025-07-12T15:00:00Z"
+    },
+    {
+        "matchID": 1064,
+        "teamA": "Lions",
+        "teamB": "Hornets",
+        "startTime": "2025-07-13T18:00:00Z"
+    },
+    {
+        "matchID": 1065,
+        "teamA": "Sharks",
+        "teamB": "Leopards",
+        "startTime": "2025-07-14T21:00:00Z"
+    },
+    {
+        "matchID": 1066,
+        "teamA": "Storm",
+        "teamB": "Sharks",
+        "startTime": "2025-07-15T12:00:00Z"
+    },
+    {
+        "matchID": 1067,
+        "teamA": "Warriors",
+        "teamB": "Storm",
+        "startTime": "2025-07-16T15:00:00Z"
+    },
+    {
+        "matchID": 1068,
+        "teamA": "Kings",
+        "teamB": "Warriors",
+        "startTime": "2025-07-17T18:00:00Z"
+    },
+    {
+        "matchID": 1069,
+        "teamA": "Dragons",
+        "teamB": "Knights",
+        "startTime": "2025-07-18T21:00:00Z"
+    },
+    {
+        "matchID": 1070,
+        "teamA": "Vikings",
+        "teamB": "Cobras",
+        "startTime": "2025-07-19T12:00:00Z"
+    },
+    {
+        "matchID": 1071,
+        "teamA": "Comets",
+        "teamB": "Falcons",
+        "startTime": "2025-07-20T15:00:00Z"
+    },
+    {
+        "matchID": 1072,
+        "teamA": "Rockets",
+        "teamB": "Lions",
+        "startTime": "2025-07-21T18:00:00Z"
+    },
+    {
+        "matchID": 1073,
+        "teamA": "Storm",
+        "teamB": "Wizards",
+        "startTime": "2025-07-22T21:00:00Z"
+    },
+    {
+        "matchID": 1074,
+        "teamA": "Hawks",
+        "teamB": "Kings",
+        "startTime": "2025-07-23T12:00:00Z"
+    },
+    {
+        "matchID": 1075,
+        "teamA": "Warriors",
+        "teamB": "Sharks",
+        "startTime": "2025-07-24T15:00:00Z"
+    },
+    {
+        "matchID": 1076,
+        "teamA": "Sharks",
+        "teamB": "Raptors",
+        "startTime": "2025-07-25T18:00:00Z"
+    },
+    {
+        "matchID": 1077,
+        "teamA": "Cobras",
+        "teamB": "Wolves",
+        "startTime": "2025-07-26T21:00:00Z"
+    },
+    {
+        "matchID": 1078,
+        "teamA": "Bulls",
+        "teamB": "Cobras",
+        "startTime": "2025-07-27T12:00:00Z"
+    },
+    {
+        "matchID": 1079,
+        "teamA": "Sharks",
+        "teamB": "Bulls",
+        "startTime": "2025-07-28T15:00:00Z"
+    },
+    {
+        "matchID": 1080,
+        "teamA": "Bulls",
+        "teamB": "Hornets",
+        "startTime": "2025-07-29T18:00:00Z"
+    },
+    {
+        "matchID": 1081,
+        "teamA": "Bears",
+        "teamB": "Vikings",
+        "startTime": "2025-07-30T21:00:00Z"
+    },
+    {
+        "matchID": 1082,
+        "teamA": "Cobras",
+        "teamB": "Hawks",
+        "startTime": "2025-07-31T12:00:00Z"
+    },
+    {
+        "matchID": 1083,
+        "teamA": "Sharks",
+        "teamB": "Spartans",
+        "startTime": "2025-07-05T15:00:00Z"
+    },
+    {
+        "matchID": 1084,
+        "teamA": "Tigers",
+        "teamB": "Kings",
+        "startTime": "2025-07-06T18:00:00Z"
+    },
+    {
+        "matchID": 1085,
+        "teamA": "Leopards",
+        "teamB": "Giants",
+        "startTime": "2025-07-07T21:00:00Z"
+    },
+    {
+        "matchID": 1086,
+        "teamA": "Warriors",
+        "teamB": "Wolves",
+        "startTime": "2025-07-08T12:00:00Z"
+    },
+    {
+        "matchID": 1087,
+        "teamA": "Tigers",
+        "teamB": "Phoenix",
+        "startTime": "2025-07-09T15:00:00Z"
+    },
+    {
+        "matchID": 1088,
+        "teamA": "Wizards",
+        "teamB": "Lions",
+        "startTime": "2025-07-10T18:00:00Z"
+    },
+    {
+        "matchID": 1089,
+        "teamA": "Warriors",
+        "teamB": "Tigers",
+        "startTime": "2025-07-11T21:00:00Z"
+    },
+    {
+        "matchID": 1090,
+        "teamA": "Falcons",
+        "teamB": "Dragons",
+        "startTime": "2025-07-12T12:00:00Z"
+    },
+    {
+        "matchID": 1091,
+        "teamA": "Spartans",
+        "teamB": "Pirates",
+        "startTime": "2025-07-13T15:00:00Z"
+    },
+    {
+        "matchID": 1092,
+        "teamA": "Tigers",
+        "teamB": "Panthers",
+        "startTime": "2025-07-14T18:00:00Z"
+    },
+    {
+        "matchID": 1093,
+        "teamA": "Dragons",
+        "teamB": "Pirates",
+        "startTime": "2025-07-15T21:00:00Z"
+    },
+    {
+        "matchID": 1094,
+        "teamA": "Lions",
+        "teamB": "Raptors",
+        "startTime": "2025-07-16T12:00:00Z"
+    },
+    {
+        "matchID": 1095,
+        "teamA": "Knights",
+        "teamB": "Wizards",
+        "startTime": "2025-07-17T15:00:00Z"
+    },
+    {
+        "matchID": 1096,
+        "teamA": "Hornets",
+        "teamB": "Thunder",
+        "startTime": "2025-07-18T18:00:00Z"
+    },
+    {
+        "matchID": 1097,
+        "teamA": "Rockets",
+        "teamB": "Storm",
+        "startTime": "2025-07-19T21:00:00Z"
+    },
+    {
+        "matchID": 1098,
+        "teamA": "Wizards",
+        "teamB": "Titans",
+        "startTime": "2025-07-20T12:00:00Z"
+    },
+    {
+        "matchID": 1099,
+        "teamA": "Thunder",
+        "teamB": "Hornets",
+        "startTime": "2025-07-21T15:00:00Z"
+    },
+    {
+        "matchID": 1100,
+        "teamA": "Mustangs",
+        "teamB": "Spartans",
+        "startTime": "2025-07-22T18:00:00Z"
+    }
+]
