@@ -8,9 +8,25 @@
 import Foundation
 import Combine
 import CombineDataSources
+import CombineExt
 
 class ViewModel {
+    private let dependency: Dependency
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+    
     func transform(input: Input) -> Output {
+        let fetchMatchs = input.loadTrigger
+            .setFailureType(to: Error.self)
+            .flatMap { _ in
+                self.dependency.apiUseCase.fetchMatchs()
+                    .zip(self.dependency.apiUseCase.fetchOdds())
+            }
+            .map { model in
+                print(model)
+            }
+        
         let data = input.loadTrigger
             .map { models -> [Section<Model>] in
                 let items: [Model] = (0..<100).map { i in
@@ -25,9 +41,13 @@ class ViewModel {
                 let section = Section(header: "", items: items)
                 return [section]
             }
+            .delay(for: .seconds(0.3), scheduler: RunLoop.current)
             .eraseToAnyPublisher()
         
-        return Output(data: data)
+        let configure = fetchMatchs
+            .ignoreFailure()
+            
+        return Output(data: data, configure: configure)
     }
 }
 
@@ -38,9 +58,11 @@ extension ViewModel {
     
     struct Output {
         let data: AnyPublisher<[Section<Model>], Never>
+        let configure: AnyPublisher<Void, Never>
     }
     
     struct Dependency {
+        var apiUseCase: APIUseCaseProtocol
     }
     
     struct Model: Identifiable, Hashable {

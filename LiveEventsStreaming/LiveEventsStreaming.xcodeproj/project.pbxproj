@@ -324,7 +324,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-LiveEventsStreaming/Pods-LiveEventsStreaming-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
