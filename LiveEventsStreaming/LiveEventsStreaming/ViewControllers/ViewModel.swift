@@ -17,37 +17,19 @@ class ViewModel {
     }
     
     func transform(input: Input) -> Output {
-        let fetchMatchs = input.loadTrigger
+        let models = input.loadTrigger
             .setFailureType(to: Error.self)
             .flatMap { _ in
                 self.dependency.apiUseCase.fetchMatchs()
                     .zip(self.dependency.apiUseCase.fetchOdds())
             }
-            .map { model in
-                print(model)
+            .map { matchs, odds in
+                self.dependency.liveEventsUseCase.getDisplayModels(matchs: matchs, odds: odds)
             }
-        
-        let data = input.loadTrigger
-            .map { models -> [Section<Model>] in
-                let items: [Model] = (0..<100).map { i in
-                    let time = Date().addingTimeInterval(Double(-i * 3600))
-                    let dateformatter = DateFormatter()
-                    dateformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                    let timeString = dateformatter.string(from: time)
-                    let oddA = Double.random(in: 1.0...5.0)
-                    let oddB = Double.random(in: 1.0...5.0)
-                    return Model(teamA: "teamA_\(i)", teamB: "teamB_\(i)", startTime: timeString, oddA: oddA, oddB: oddB)
-                }
-                let section = Section(header: "", items: items)
-                return [section]
-            }
-            .delay(for: .seconds(0.3), scheduler: RunLoop.current)
-            .eraseToAnyPublisher()
-        
-        let configure = fetchMatchs
             .ignoreFailure()
+            .eraseToAnyPublisher()
             
-        return Output(data: data, configure: configure)
+        return Output(models: models, configure: Just(()).eraseToAnyPublisher())
     }
 }
 
@@ -57,12 +39,13 @@ extension ViewModel {
     }
     
     struct Output {
-        let data: AnyPublisher<[Section<Model>], Never>
+        let models: AnyPublisher<[Section<Model>], Never>
         let configure: AnyPublisher<Void, Never>
     }
     
     struct Dependency {
         var apiUseCase: APIUseCaseProtocol
+        var liveEventsUseCase: LiveEventsUseCase
     }
     
     struct Model: Identifiable, Hashable {

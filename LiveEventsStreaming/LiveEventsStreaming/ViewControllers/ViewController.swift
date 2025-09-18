@@ -12,7 +12,7 @@ import CombineDataSources
 class ViewController: UIViewController {
     private var cancelBag = Set<AnyCancellable>()
     
-    private let viewModel = ViewModel(dependency: .init(apiUseCase: MockAPIUseCase()))
+    private let viewModel = ViewModel(dependency: .init(apiUseCase: MockAPIUseCase(), liveEventsUseCase: LiveEventsUseCaseImpl()))
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -69,7 +69,7 @@ extension ViewController {
         
         let output = viewModel.transform(input: .init(loadTrigger: loadTrigger.eraseToAnyPublisher()))
         
-        output.data
+        output.models
             .bind(subscriber: tableView.sectionsSubscriber(cellIdentifier: LiveEventsStreamingTableViewCell.reuseIdentifier, cellType: LiveEventsStreamingTableViewCell.self, cellConfig: { cell, _, model in
                 cell.configure(with: model)
             }))
