@@ -8,6 +8,7 @@ target 'LiveEventsStreaming' do
   # Pods for LiveEventsStreaming
 
   pod 'CombineDataSources'
+  pod 'CombineExt'
 
   target 'LiveEventsStreamingTests' do
     inherit! :search_paths

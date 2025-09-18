@@ -1,16 +1,20 @@
 PODS:
   - CombineDataSources (0.2.5)
+  - CombineExt (1.8.0)
 
 DEPENDENCIES:
   - CombineDataSources
+  - CombineExt
 
 SPEC REPOS:
   trunk:
     - CombineDataSources
+    - CombineExt
 
 SPEC CHECKSUMS:
   CombineDataSources: dcbc3b06a038ffdf620b3b4533d3ecaf76ca6a2e
+  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
 
-PODFILE CHECKSUM: e450d0d73951505dfb70ef47104497a479768192
+PODFILE CHECKSUM: bfb664acf6690f4d9ee1b3b6ccf0e5000db57b81
 
 COCOAPODS: 1.16.2
