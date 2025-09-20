@@ -10,6 +10,7 @@ target 'LiveEventsStreaming' do
   pod 'CombineDataSources'
   pod 'CombineExt'
   pod 'CombineCocoa'
+  pod 'RealmSwift'
 
   target 'LiveEventsStreamingTests' do
     inherit! :search_paths
