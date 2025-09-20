@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     private let viewModel = ViewModel(dependency: .init(apiUseCase: MockAPIUseCase(), liveEventsUseCase: LiveEventsUseCaseImpl(), socketUseCase: MockSocketUseCase()))
     
+    private let monitor: FPSMonitor = .init()
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +24,16 @@ class ViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 24)
         label.textAlignment = .center
         label.text = "Live Events Streaming"
+        
+        return label
+    }()
+    
+    private lazy var fpsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 14)
+        label.textAlignment = .right
         
         return label
     }()
@@ -55,6 +67,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func layoutViews() {
         view.addSubview(nameLabel)
+        view.addSubview(fpsLabel)
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -63,7 +76,11 @@ extension ViewController {
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             nameLabel.heightAnchor.constraint(equalToConstant: 44),
             
-            tableView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            fpsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            fpsLabel.heightAnchor.constraint(equalToConstant: 20),
+            fpsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: fpsLabel.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -75,6 +92,14 @@ extension ViewController {
         defer {
             loadTrigger.send(())
         }
+        
+        monitor.start()
+        
+        monitor.fpsPublisher
+            .sink { [weak self] fps in
+                self?.fpsLabel.text = "FPS: \(fps)"
+            }
+            .store(in: &cancelBag)
         
         let output = viewModel.transform(input: .init(
             loadTrigger: loadTrigger.eraseToAnyPublisher(),
