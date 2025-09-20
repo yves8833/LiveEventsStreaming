@@ -7,12 +7,13 @@
 
 import UIKit
 import Combine
+import CombineExt
 import CombineDataSources
 
 class ViewController: UIViewController {
     private var cancelBag = Set<AnyCancellable>()
     
-    private let viewModel = ViewModel(dependency: .init(apiUseCase: MockAPIUseCase(), liveEventsUseCase: LiveEventsUseCaseImpl()))
+    private let viewModel = ViewModel(dependency: .init(apiUseCase: MockAPIUseCase(), liveEventsUseCase: LiveEventsUseCaseImpl(), socketUseCase: MockSocketUseCase()))
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -33,6 +34,14 @@ class ViewController: UIViewController {
         tableView.register(LiveEventsStreamingTableViewCell.self, forCellReuseIdentifier: LiveEventsStreamingTableViewCell.reuseIdentifier)
         
         return tableView
+    }()
+    
+    private lazy var dataSource: TableViewItemsController<[Section<ViewModel.Model>]> = {
+        let dataSource = TableViewItemsController<[Section<ViewModel.Model>]>.init(cellIdentifier: LiveEventsStreamingTableViewCell.reuseIdentifier, cellType: LiveEventsStreamingTableViewCell.self, cellConfig: { cell, _, model in
+            cell.configure(with: model)
+        })
+        dataSource.rowAnimations = (.top, .top, .top)
+        return dataSource
     }()
     
     override func viewDidLoad() {
@@ -67,12 +76,19 @@ extension ViewController {
             loadTrigger.send(())
         }
         
-        let output = viewModel.transform(input: .init(loadTrigger: loadTrigger.eraseToAnyPublisher()))
+        let output = viewModel.transform(input: .init(
+            loadTrigger: loadTrigger.eraseToAnyPublisher(),
+            viewWillAppear: viewWillAppearPublisher
+                .mapToVoid()
+                .eraseToAnyPublisher(),
+            viewWillDisappear: viewWillDisappearPublisher
+                .mapToVoid()
+                .eraseToAnyPublisher(),
+        ))
         
         output.models
-            .bind(subscriber: tableView.sectionsSubscriber(cellIdentifier: LiveEventsStreamingTableViewCell.reuseIdentifier, cellType: LiveEventsStreamingTableViewCell.self, cellConfig: { cell, _, model in
-                cell.configure(with: model)
-            }))
+            .throttle(for: .milliseconds(300), scheduler: RunLoop.main, latest: true)
+            .bind(subscriber: tableView.sectionsSubscriber(dataSource))
             .store(in: &cancelBag)
         
         output.configure
