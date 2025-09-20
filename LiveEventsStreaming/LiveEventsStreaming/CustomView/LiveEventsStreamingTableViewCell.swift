@@ -96,7 +96,7 @@ class LiveEventsStreamingTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(with model: ViewModel.Model) {
+    func configure(with model: LiveEventsViewModel.Model) {
         teamANameLabel.text = model.teamA
         teamBNameLabel.text = model.teamB
         teamAOddLabel.text = String(format: "%.2f", model.oddA)

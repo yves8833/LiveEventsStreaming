@@ -54,6 +54,7 @@ class MockAPIUseCase: APIUseCaseProtocol {
             return Just(mockData)
                 .delay(for: .seconds(0.3), scheduler: RunLoop.current)
                 .setFailureType(to: Error.self)
+                .receive(on: DispatchQueue.global(qos: .background))
                 .eraseToAnyPublisher()
         } catch {
             return Fail<GetMatchsRequest.Response, Error>(error: error)
@@ -73,6 +74,7 @@ class MockAPIUseCase: APIUseCaseProtocol {
             return Just(mockData)
                 .delay(for: .seconds(0.3), scheduler: RunLoop.current)
                 .setFailureType(to: Error.self)
+                .receive(on: DispatchQueue.global(qos: .background))
                 .eraseToAnyPublisher()
         } catch {
             return Fail<GetOddsRequest.Response, Error>(error: error)

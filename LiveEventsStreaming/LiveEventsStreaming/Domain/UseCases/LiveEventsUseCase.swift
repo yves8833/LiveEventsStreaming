@@ -9,13 +9,13 @@ import Foundation
 import CombineDataSources
 import Combine
 
-protocol LiveEventsUseCase {
-    func getDisplayModels(matchs: [MatchModel], odds: [OddModel]) -> [Section<ViewModel.Model>]
-    func updateDisplayModels(models: [Section<ViewModel.Model>], with oddMessages: OddMessage) -> AnyPublisher<[Section<ViewModel.Model>], Never>
+protocol LiveEventsUseCaseProtocol {
+    func getDisplayModels(matchs: [MatchModel], odds: [OddModel]) -> [Section<LiveEventsViewModel.Model>]
+    func updateDisplayModels(models: [Section<LiveEventsViewModel.Model>], with oddMessages: OddMessage) -> AnyPublisher<[Section<LiveEventsViewModel.Model>], Never>
 }
 
 extension LiveEventsUseCase {
-    func updateDisplayModels(models: [Section<ViewModel.Model>], with oddMessage: OddMessage) -> AnyPublisher<[Section<ViewModel.Model>], Never> {
+    func updateDisplayModels(models: [Section<LiveEventsViewModel.Model>], with oddMessage: OddMessage) -> AnyPublisher<[Section<LiveEventsViewModel.Model>], Never> {
         guard var items = models.first?.items,
               let index = items.firstIndex(where: { model in
                   model.matchId == oddMessage.matchID
@@ -27,13 +27,13 @@ extension LiveEventsUseCase {
         item.oddA = oddMessage.oddA
         item.oddB = oddMessage.oddB
         items[index] = item
-        let models: [Section<ViewModel.Model>] = [.init(items: items)]
+        let models: [Section<LiveEventsViewModel.Model>] = [.init(items: items)]
         return Just(models)
             .eraseToAnyPublisher()
     }
 }
 
-class LiveEventsUseCaseImpl: LiveEventsUseCase {
+class LiveEventsUseCase: LiveEventsUseCaseProtocol {
     private lazy var parserDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -46,8 +46,8 @@ class LiveEventsUseCaseImpl: LiveEventsUseCase {
         return formatter
     }()
     
-    func getDisplayModels(matchs: [MatchModel], odds: [OddModel]) -> [Section<ViewModel.Model>] {
-        var models = matchs.compactMap { match -> ViewModel.Model? in
+    func getDisplayModels(matchs: [MatchModel], odds: [OddModel]) -> [Section<LiveEventsViewModel.Model>] {
+        var models = matchs.compactMap { match -> LiveEventsViewModel.Model? in
             guard let odd = odds.first(where: { $0.matchID == match.matchID }) else {
                 return nil
             }
