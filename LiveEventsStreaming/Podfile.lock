@@ -1,20 +1,24 @@
 PODS:
+  - CombineCocoa (0.4.1)
   - CombineDataSources (0.2.5)
   - CombineExt (1.8.0)
 
 DEPENDENCIES:
+  - CombineCocoa
   - CombineDataSources
   - CombineExt
 
 SPEC REPOS:
   trunk:
+    - CombineCocoa
     - CombineDataSources
     - CombineExt
 
 SPEC CHECKSUMS:
+  CombineCocoa: e5210dbfb480ff251078929459ac17e750e7af1d
   CombineDataSources: dcbc3b06a038ffdf620b3b4533d3ecaf76ca6a2e
   CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
 
-PODFILE CHECKSUM: bfb664acf6690f4d9ee1b3b6ccf0e5000db57b81
+PODFILE CHECKSUM: bda5420491d21a6d78433c21f962e5aaf150f058
 
 COCOAPODS: 1.16.2
