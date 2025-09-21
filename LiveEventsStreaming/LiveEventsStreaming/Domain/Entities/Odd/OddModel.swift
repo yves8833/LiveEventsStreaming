@@ -10,3 +10,4 @@ struct OddModel: Codable {
     let teamAOdds: Double
     let teamBOdds: Double
 }
+

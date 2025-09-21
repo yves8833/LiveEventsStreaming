@@ -14,7 +14,7 @@ protocol LiveEventsUseCaseProtocol {
     func updateDisplayModels(models: [Section<LiveEventsViewModel.Model>], with oddMessages: OddMessage) -> AnyPublisher<[Section<LiveEventsViewModel.Model>], Never>
 }
 
-extension LiveEventsUseCase {
+extension LiveEventsUseCaseProtocol {
     func updateDisplayModels(models: [Section<LiveEventsViewModel.Model>], with oddMessage: OddMessage) -> AnyPublisher<[Section<LiveEventsViewModel.Model>], Never> {
         guard var items = models.first?.items,
               let index = items.firstIndex(where: { model in

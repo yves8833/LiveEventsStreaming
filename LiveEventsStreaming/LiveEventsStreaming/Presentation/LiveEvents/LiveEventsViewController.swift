@@ -84,7 +84,7 @@ extension LiveEventsViewController {
     }
     
     private func bindViewModel() {
-        let loadTrigger = CurrentValueSubject<Void, Never>(())
+        let loadTrigger = PassthroughSubject<Void, Never>()
         defer {
             loadTrigger.send(())
         }

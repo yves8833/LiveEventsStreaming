@@ -19,20 +19,41 @@ class LiveEventsViewModel {
     
     func transform(input: Input) -> Output {
         let updatedModels = PassthroughSubject<[Section<Model>], Never>()
-        let defaultModels = input.loadTrigger
+        let localModels = input.loadTrigger
             .setFailureType(to: Error.self)
             .flatMap { _ in
-                self.dependency.apiUseCase.fetchMatchs()
-                    .zip(self.dependency.apiUseCase.fetchOdds())
+                self.dependency.databaseUseCase.queryMatchs()
+                    .zip(self.dependency.databaseUseCase.queryOdds())
+                    .eraseToAnyPublisher()
             }
+            
+        let remoteModels = input.loadTrigger
+            .setFailureType(to: Error.self)
+            .flatMap { _ in
+                let fetchMatch = self.dependency.apiUseCase.fetchMatchs()
+                    .flatMap({ models in
+                        self.dependency.databaseUseCase.insertUpdate(models: models)
+                    })
+                
+                let fetchOdds = self.dependency.apiUseCase.fetchOdds()
+                    .flatMap({ models in
+                        self.dependency.databaseUseCase.insertUpdate(models: models)
+                    })
+                return fetchMatch
+                    .zip(fetchOdds)
+                    .eraseToAnyPublisher()
+            }
+        
+        let fetchModels = localModels
+            .merge(with: remoteModels)
             .map { matchs, odds in
                 self.dependency.liveEventsUseCase.getDisplayModels(matchs: matchs, odds: odds)
             }
-            .ignoreFailure()
+            .replaceError(with: [])
             .receive(on: self.dependency.workQueue)
             .eraseToAnyPublisher()
         
-        let models = defaultModels
+        let models = fetchModels
             .merge(with: updatedModels)
             .eraseToAnyPublisher()
             .asDriver(onErrorJustReturn: [])
@@ -104,9 +125,10 @@ extension LiveEventsViewModel {
     }
     
     struct Dependency {
-        var apiUseCase: APIUseCaseProtocol
-        var liveEventsUseCase: LiveEventsUseCase
-        var socketUseCase: SocketUseCaseProtocol
+        var apiUseCase: APIUseCaseProtocol = MockAPIUseCase()
+        var liveEventsUseCase: LiveEventsUseCaseProtocol = LiveEventsUseCase()
+        var socketUseCase: SocketUseCaseProtocol = MockSocketUseCase()
+        var databaseUseCase: DatabaseUseCaseProtocol = DatabaseUseCase()
         var workQueue = DispatchQueue(label: "LiveEventsViewModel", qos: .userInitiated)
     }
     
